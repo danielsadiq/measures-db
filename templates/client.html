@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Client Data{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Client: {{ client.name }}</h1>
+        <p>Name: {{ client.name }}</p>
+        <p>Shoulder: {{ client.shoulder }}</p>
+        <p>Torso: {{ client.torso }}</p>
+        <p>Arm: {{ client.arm }}</p>
+        <p>Bicep: {{ client.bicep }}</p>
+        <p>Leg: {{ client.leg }}</p>
+        <p>Lwidth: {{ client.lwidth }}</p>
+        <p>Description: {{ client.description }}</p>
+        <a class="btn btn-primary" href="{{ url_for('edit', id=client.id) }}">Edit Info</a>
+    </div>
+{% endblock %}

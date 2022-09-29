@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Add Client{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>CLIENT DATABASE APP</h1>
+        <div class="row">
+            <a href="New Client"></a>
+            <a href="Search"></a>
+        </div>
+        <form action="{{ url_for('add') }}" method="post">
+            {% for val in heyy %}
+                    {{ form[val].label(class="form-control-label") }}
+                    {{ form[val](class="form-control form-control-sm") }}
+            {% endfor %}
+            <br>
+            {{ form.date.label }}{{ form.date }}
+            {{ form.submit(class="btn btn-outline-info") }}
+            <br><br>
+        </form>
+    </div>
+{% endblock %}
+
+<!-- <form action="#" method="post">
+            {{ form.name.label(class="form-control-label") }}{{ form.name(class="form-control form-control-sm") }}
+            {{ form.shoulder.label(class="form-control-label") }}{{ form.shoulder(class="form-control form-control-sm") }}
+            {{ form.torso.label(class="form-control-label") }}{{ form.torso(class="form-control form-control-sm") }}
+            {{ form.arm.label(class="form-control-label") }}{{ form.arm(class="form-control form-control-sm") }}
+            {{ form.bicep.label(class="form-control-label") }}{{ form.bicep(class="form-control form-control-sm") }}
+            {{ form.leg.label(class="form-control-label") }}{{ form.leg(class="form-control form-control-sm") }}
+            {{ form.lwidth.label(class="form-control-label") }}{{ form.lwidth(class="form-control form-control-sm") }}
+            {{ form.description.label(class="form-control-label") }}{{ form.description(class="form-control form-control-lg") }}
+        </form> -->
